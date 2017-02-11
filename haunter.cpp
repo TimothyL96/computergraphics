@@ -11,14 +11,14 @@ void ForceField::draw()
     glPointSize(1.0);
     srand(1);
     glColor3f(1.0f, 1.0f, 1.0f);
-    GLfloat x,y,z;
+    GLfloat x, y, z;
     glBegin(GL_POINTS);
-    for (int i=0; i<1000; ++i)
+    for (int i = 0; i < 1000; ++i)
     {
-    x = (rand()%10000)/10000.0 * 80.0 - 40.0;
-    y = (rand()%10000)/10000.0 * 80.0 - 30.0;
-    z = (rand()%10000)/10000.0 * 80.0 - 40.0;
-    glVertex3f(x,y,z);
+        x = (rand() % 10000) / 10000.0 * 80.0 - 40.0;
+        y = (rand() % 10000) / 10000.0 * 80.0 - 30.0;
+        z = (rand() % 10000) / 10000.0 * 80.0 - 40.0;
+        glVertex3f(x, y, z);
     }
     glEnd();
 }
@@ -26,15 +26,15 @@ void ForceField::draw()
 void GrassField::draw()
 {
     glPushMatrix();
-    for(int i=0;i<3600;i++)
+    for(int i = 0; i < 3600; i++)
     {
-    glBegin(GL_TRIANGLES);
-    glColor3f(0.0,1.0,0.0);
-	glVertex3f(0.0,-35.0,0.0);
-	glVertex3f(20.0,-35,-25.0);
-	glVertex3f(-20.0,-35,-25.0);
-	glEnd();
-    glRotatef(0.1f, 0.0f, 1.0f,0.0f);
+        glBegin(GL_TRIANGLES);
+        glColor3f(0.0, 1.0, 0.0);
+        glVertex3f(0.0, -35.0, 0.0);
+        glVertex3f(20.0, -35, -25.0);
+        glVertex3f(-20.0, -35, -25.0);
+        glEnd();
+        glRotatef(0.1f, 0.0f, 1.0f, 0.0f);
     }
     glPopMatrix();
 }
@@ -43,8 +43,8 @@ void Moon::draw()
 {
     glPushMatrix();
     glDisable(GL_CULL_FACE);
-    glColor3f(1.0,1.0,0.0);
-    glTranslatef(-40.0,60.0,0.0);
+    glColor3f(1.0, 1.0, 0.0);
+    glTranslatef(-40.0, 60.0, 0.0);
 
     //set up color
     static GLfloat mywhite[]  = { 0.3f, 0.3f, 0.3f, 1.0f };
@@ -60,56 +60,14 @@ void Moon::draw()
     //set up position
     static GLfloat position[] = {-40.0f, 60.0f, 0.0f, 1.0f };
     //draw object
-    glutSolidSphere(7,50,50);   //Display Moon as a solid object
+    glutSolidSphere(7, 50, 50);   //Display Moon as a solid object
     glLightfv(GL_LIGHT1, GL_POSITION, position);
 
     glEnable(GL_CULL_FACE);
     glPopMatrix();
 }
-/*
-void MyBezierLine::setup(const GLfloat* controlPoints,
-GLint uOrder)
-{
-    controlpoints = controlPoints;
-    uorder = uOrder;
-    //setup the bezier
-    glMap1f(GL_MAP1_VERTEX_3, //to be generated data
-    0.0f, //lower u range
-    1.0f, //higher u range
-    3, //u control point stride in array
-    uorder, //order of u or number of u control point
-    controlpoints); //the control points array
-    //enabling bezier evaluator
-    glEnable(GL_MAP1_VERTEX_3);
-}
 
-void MyBezierLine::draw(GLenum draw_mode, //GL_LINE or GL_POINT
-GLint ures)
-{
-    //setting the 1D grid map containing ures points
-    //map to u range 0.0 - 1.0
-    glMapGrid1f(ures, 0.0f, 1.0f);
-    //evaluate the bezier surface
-    glEvalMesh1(draw_mode, 0, ures);
-}
-
-void MyBezierLine::drawControlPoints()
-{
-    //draw the control points
-    int index = 0;
-    glBegin(GL_LINE_STRIP);
-    for(int i=0; i < uorder; ++i)
-    {
-        glVertex3fv(controlpoints + index );
-        index += 3;
-    }
-    glEnd();
-}
-*/
-
-void MyBezierSurface::setup(const GLfloat* controlPoints,
-GLint uOrder, GLint vOrder,
-const bool autonormal)
+void bezierSurface::setup(const GLfloat* controlPoints, GLint uOrder, GLint vOrder, const bool autonormal)
 {
     controlpoints = controlPoints;
     uorder = uOrder;
@@ -128,45 +86,192 @@ const bool autonormal)
     //enabling bezier evaluator
     glEnable(GL_MAP2_VERTEX_3);
     //enabling auto generation of normals for use with lighting
-    if (autonormal) glEnable(GL_AUTO_NORMAL);
+    if (autonormal)
+        glEnable(GL_AUTO_NORMAL);
+
 }
 
-void MyBezierSurface::draw(GLenum draw_mode, //GL_FILL or GL_LINE or GL_POINT
-    GLint ures,GLint vres)
-{
-    glDisable(GL_CULL_FACE);
-    //setting the 2D grid map containing ures * vres points
-    //map to u range 0.0 - 1.0, v range 0.0 - 1.0
-    glMapGrid2f(ures, 0.0f, 1.0f, vres, 0.0f, 1.0f);
-    //evaluate the bezier surface
-    glEvalMesh2(draw_mode, 0, ures, 0, vres);
-    glEnable(GL_CULL_FACE);
-}
-
-void MyBezierSurface::drawControlPoints()
+void bezierSurface::drawControlPoints()
 {
     //draw the control points
     int index = 0;
-    for(int j=0; j < vorder; ++j)
+    for(int j = 0; j < vorder; ++j)
     {
         glBegin(GL_LINE_STRIP);
-        for(int i=0; i < uorder; ++i)
+        for(int i = 0; i < uorder; ++i)
         {
             glVertex3fv(controlpoints + index );
             index += 3;
         }
         glEnd();
     }
-    for(int i=0; i < uorder; ++i)
+    for(int i = 0; i < uorder; ++i)
     {
-        index = 3*i;
+        index = 3 * i;
         glBegin(GL_LINE_STRIP);
-        for(int j=0; j < vorder; ++j)
+        for(int j = 0; j < vorder; ++j)
         {
             glVertex3fv(controlpoints + index );
             index += uorder*3;
         }
         glEnd();
+    }
+}
+
+void bezierSurface::init(int num)
+{
+    //Pink Mouth
+    static GLfloat controlpoints1[] =
+    {
+        -9.0f,-3.0f, 6.8f,
+        -6.0f, -4.0f, 13.15f,
+        6.0f, -4.0f, 13.15f,
+        9.0f,-3.0f, 6.8f,
+
+
+        -6.0f,-5.0f, 9.0f,
+        -6.0f, -8.0f, 9.9f,
+        6.0f, -8.0f, 9.9f,
+        6.0f,-5.0f, 9.0f,
+    };
+
+    //Top first left teeth
+    static GLfloat controlpoints2[] =
+    {
+        -5.7f,-5.0f, 9.57f, // Lower
+        -7.0f, -3.39f, 9.35f, // Top left
+
+        -5.0f,-3.58f, 10.57f, // Top right
+        -6.2f, -3.46f, 9.98f, // top center
+    };
+
+    //Top first right teeth
+    static GLfloat controlpoints3[] =
+    {
+        5.7f, -5.0f, 9.57f, // Lower
+        7.0f, -3.39f, 9.35f, // Top right
+
+        5.0f, -3.58f, 10.57f, // Top left
+        6.2f, -3.46f, 9.98f, // top center
+    };
+
+    //Top second left teeth
+    static GLfloat controlpoints4[] =
+    {
+        -2.3f, -5.13f, 10.67f, // Lower
+        -3.5f, -3.67f, 11.13f, // Top left
+
+        -1.5f, -3.73f, 11.5f, // Top right
+        -2.7f, -3.69f, 11.33f, // top center
+    };
+
+    //Top second right teeth
+    static GLfloat controlpoints5[] =
+    {
+        2.3f, -5.13f, 10.67f, // Lower
+        3.5f, -3.67f, 11.13f, // Top right
+
+        1.5f, -3.73f, 11.5f, // Top left
+        2.7f, -3.69f, 11.33f, // top center
+    };
+
+    //Bottom right first teeth
+    static GLfloat controlpoints6[] =
+    {
+        4.6f, -5.5f, 9.85f, // Higher
+        5.55f, -6.0f, 9.3f, // Bottom right
+
+        4.0f, -6.76f, 9.52f, // Bottom left
+        4.9f, -6.45f, 9.45f, // Bottom center
+    };
+
+    //Bottom right second teeth
+    static GLfloat controlpoints7[] =
+    {
+        3.1f, -5.8f, 10.15f, // Higher
+        4.0f, -6.75f, 9.52f, // Bottom right
+
+        2.3f, -7.13f, 9.66f, // Bottom left
+        3.3f, -6.95f, 9.57f, // Bottom center
+    };
+
+    //Bottom right third teeth
+    static GLfloat controlpoints8[] =
+    {
+        1.4f, -6.2f, 10.2f, // Higher
+        2.3f, -7.13f, 9.64f, // Bottom right
+
+        0.6f, -7.28f, 9.68f, // Bottom left
+        1.4f, -7.24f, 9.66f, // Bottom center
+    };
+
+    //Bottom right fourth teeth
+    static GLfloat controlpoints9[] =
+    {
+        -0.52f, -6.0f, 10.37f, // Higher
+        0.6f, -7.28f, 9.7f, // Bottom right
+
+        -1.55f, -7.22f, 9.67f, // Bottom left
+        -0.5f, -7.29f, 9.67f, // Bottom center
+    };
+
+    //Bottom right fifth teeth
+    static GLfloat controlpoints10[] =
+    {
+        -2.72f, -6.0f, 10.16f, // Higher
+        -1.55f, -7.22f, 9.65f, // Bottom right
+
+        -4.1f, -6.74f, 9.52f, // Bottom left
+        -2.82f, -7.03f, 9.62f, // Bottom center
+    };
+
+    bezierSurface bso;
+    HaunterFace hfo;
+
+    switch (num)
+    {
+        case 1:
+            bso.setup(controlpoints1, 4, 2);
+            glColor3f(1,0.41,0.71);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 2:
+            bso.setup(controlpoints2, 2, 2);
+            glColor3f(0.5,0.0,0.75);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 3:
+            bso.setup(controlpoints3, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 4:
+            bso.setup(controlpoints4, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 5:
+            bso.setup(controlpoints5, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 6:
+            bso.setup(controlpoints6, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 7:
+            bso.setup(controlpoints7, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 8:
+            bso.setup(controlpoints8, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 9:
+            bso.setup(controlpoints9, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
+        case 10:
+            bso.setup(controlpoints10, 2, 2);
+            hfo.drawMouth(GL_FILL);
+            break;
     }
 }
 
@@ -176,14 +281,14 @@ void HaunterFace::drawFace()
 
     const float Deg2Rad = 3.14159/180 ;// convert degree into Rad
 
-    glColor3f(0.5,0.0,0.75);
+    glColor3f(0.5, 0.0, 0.75);
     GLUquadricObj *sphere;
     sphere = gluNewQuadric();
-    gluQuadricDrawStyle( sphere, GLU_FILL);
-    gluQuadricNormals( sphere, GLU_SMOOTH);
-    gluQuadricOrientation( sphere, GLU_OUTSIDE);
-    gluQuadricTexture( sphere, GL_TRUE);
-    gluSphere( sphere, 12, 16, 16);
+    gluQuadricDrawStyle(sphere, GLU_FILL);
+    gluQuadricNormals(sphere, GLU_SMOOTH);
+    gluQuadricOrientation(sphere, GLU_OUTSIDE);
+    gluQuadricTexture(sphere, GL_TRUE);
+    gluSphere(sphere, 12, 16, 16);
 
 	//Try to use pytamid for the bottom spike
 	glBegin(GL_POLYGON);
@@ -191,16 +296,16 @@ void HaunterFace::drawFace()
 
 	glBegin(GL_TRIANGLES);
 	//glColor3f(1.0,1.0,0.0); //this is for testing usage
-	glColor3f(0.47,0.0,0.71);
+	glColor3f(0.47, 0.0, 0.71);
 	//Left top spike
-	glVertex3f(-5,8,7);
-	glVertex3f(-20,15,-8);
-	glVertex3f(-10,0,7);
+	glVertex3f(-5, 8, 7);
+	glVertex3f(-20, 15, -8);
+	glVertex3f(-10, 0, 7);
 
 	//left middle spike
-	glVertex3f(-8,1,8);
-	glVertex3f(-20,4,-10);
-	glVertex3f(-7,-7,6);
+	glVertex3f(-8, 1, 8);
+	glVertex3f(-20, 4, -10);
+	glVertex3f(-7, -7, 6);
 
     //left bottom spike
 	glVertex3f(-8, -4, 5);
@@ -209,14 +314,14 @@ void HaunterFace::drawFace()
 
 	//Start of right spike
 	//right top spike
-	glVertex3f(5,8,7);
-	glVertex3f(20,15,-8);
-	glVertex3f(10,0,7);
+	glVertex3f(5, 8, 7);
+	glVertex3f(20, 15, -8);
+	glVertex3f(10, 0, 7);
 
 	//right middle spike
-	glVertex3f(8,1,8);
-	glVertex3f(20,4,-10);
-	glVertex3f(7,-7,6);
+	glVertex3f(8, 1, 8);
+	glVertex3f(20, 4, -10);
+	glVertex3f(7, -7, 6);
 
     //right bottom spike
 	glVertex3f(8, -4, 5);
@@ -228,18 +333,18 @@ void HaunterFace::drawFace()
    // glColor3f(1,1,1); //color for testing
 
 	//Bottom left spike 2
-    glVertex3f(-6,-9,5);
-    glVertex3f(-2,-20,-5);
-    glVertex3f(-2,-10,5);
+    glVertex3f(-6, -9, 5);
+    glVertex3f(-2, -20, -5);
+    glVertex3f(-2, -10, 5);
 	//Bottom Middle spike
     glVertex3f(-2,-10,6);
     glVertex3f(0,-25,-8);
     glVertex3f(2,-10,6);
 
 	//Bottom right spike 2
-    glVertex3f(6,-9,5);
-    glVertex3f(2,-20,-5);
-    glVertex3f(2,-10,5);
+    glVertex3f(6, -9, 5);
+    glVertex3f(2, -20, -5);
+    glVertex3f(2, -10, 5);
 	glEnd();
     glEnable(GL_CULL_FACE);
 }
@@ -249,10 +354,10 @@ void HaunterFace::drawLeftEyes()
     glDisable(GL_CULL_FACE);
     //I left it first
     glBegin(GL_TRIANGLES);
-    glColor3f(1,1,1);
-    glVertex3f(-2,0,12);
-    glVertex3f(-9,6,9);
-    glVertex3f(-10,0,9);
+    glColor3f(1, 1, 1);
+    glVertex3f(-2, 0, 12);
+    glVertex3f(-9, 6, 9);
+    glVertex3f(-10, 0, 9);
     glEnd();
     glEnable(GL_CULL_FACE);
 }
@@ -263,44 +368,25 @@ void HaunterFace::drawRightEyes()
 
     glBegin(GL_TRIANGLES);
     glPolygonMode(GL_FRONT,GL_FILL);
-    glVertex3f(2,0,12);
-    glVertex3f(9,6,9);
-    glVertex3f(10,0,9);
+    glVertex3f(2, 0, 12);
+    glVertex3f(9, 6, 9);
+    glVertex3f(10, 0, 9);
     glEnd();
     glEnable(GL_CULL_FACE);
 }
 
-void HaunterFace::drawMouth()
+void HaunterFace::drawMouth(GLenum draw_mode, GLint ures,GLint vres)
 {
-    //will draw later
     glDisable(GL_CULL_FACE);
-
-    glBegin(GL_POLYGON);
-    glPolygonMode(GL_FRONT,GL_FILL);
-    glColor3f(1,0.41,0.71);
-    //leftmost top
-    glVertex3f(-10,-2,8);
-    glVertex3f(-9,-2,9);
-    glVertex3f(-8,-2,10);
-    glVertex3f(-7,-2,11);
-    //center top
-    glVertex3f(0,-2,12);
-    //rightmost top
-    glVertex3f(10,-2,12);
-
-    //Mouth below right
-    glVertex3f(2,-8,10);
-    //Mouth below center
-    glVertex3f(0,-8,10);
-    //Mouth below right
-    glVertex3f(-2,-8,10);
-
-    glEnd();
+    //setting the 2D grid map containing ures * vres points
+    //map to u range 0.0 - 1.0, v range 0.0 - 1.0
+    glMapGrid2f(ures, 0.0f, 1.0f, vres, 0.0f, 1.0f);
+    //evaluate the bezier surface
+    glEvalMesh2(draw_mode, 0, ures, 0, vres);
     glEnable(GL_CULL_FACE);
 }
 
 void Haunter_Hand::draw()
 {
     //will draw later
-
 }
