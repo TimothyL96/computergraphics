@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1486224515 source:y:\year 2 sem 2\tcs2221\assignment\computer-graphic-haunter-master\haunter.cpp
+	<glut.h>
+	<string>
+	<fstream>
+	<math.h>
+	"haunter.hpp"
+
+1486224826 y:\year 2 sem 2\tcs2221\assignment\computer-graphic-haunter-master\haunter.hpp
+	"main.hpp"
+
+1486225018 y:\year 2 sem 2\tcs2221\assignment\computer-graphic-haunter-master\main.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<glut.h>
+	<time.h>
+
+1486224809 source:y:\year 2 sem 2\tcs2221\assignment\computer-graphic-haunter-master\main.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<glut.h>
+	"main.hpp"
+	"haunter.hpp"
+
+1486224515 source:y:\year 2 sem 2\tcs2221\assignment\opengl-haunter\haunter.cpp
+	<glut.h>
+	<string>
+	<fstream>
+	<math.h>
+	"haunter.hpp"
+
+1486224826 y:\year 2 sem 2\tcs2221\assignment\opengl-haunter\haunter.hpp
+	"main.hpp"
+
+1486225034 y:\year 2 sem 2\tcs2221\assignment\opengl-haunter\main.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<glut.h>
+	<time.h>
+
+1486225905 source:y:\year 2 sem 2\tcs2221\assignment\opengl-haunter\main.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<glut.h>
+	"main.hpp"
+	"haunter.hpp"
+
+1486806714 source:e:\mmu\degree it artificial intelligence\sem 5\tcs 2221 - computer graphics\assignment\pokemonhaunter-master\opengl-haunter\haunter.cpp
+	<GL\glut.h>
+	<string>
+	<fstream>
+	<math.h>
+	"haunter.hpp"
+
+1486811287 e:\mmu\degree it artificial intelligence\sem 5\tcs 2221 - computer graphics\assignment\pokemonhaunter-master\opengl-haunter\haunter.hpp
+	"main.hpp"
+
+1486627246 e:\mmu\degree it artificial intelligence\sem 5\tcs 2221 - computer graphics\assignment\pokemonhaunter-master\opengl-haunter\main.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<GL\glut.h>
+	<time.h>
+
+1486627246 source:e:\mmu\degree it artificial intelligence\sem 5\tcs 2221 - computer graphics\assignment\pokemonhaunter-master\opengl-haunter\main.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<GL\glut.h>
+	"main.hpp"
+	"haunter.hpp"
+
