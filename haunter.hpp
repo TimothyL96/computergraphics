@@ -153,6 +153,7 @@ namespace haunter{
                 };
                 mybeziersurface.setup(controlpoints2, 4, 2);
             }
+
             void init1()
             {
                 static GLfloat controlpoints3[] =
@@ -179,6 +180,7 @@ namespace haunter{
                 };
                 mybeziersurface.setup(controlpoints3, 2, 2);
             }
+
             void init2()
             {
                 static GLfloat controlpoints3[] =
