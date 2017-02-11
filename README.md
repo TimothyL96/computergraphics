@@ -2,6 +2,9 @@
 A computer graphic assignment drawn with OpenGL using C++.
 The task is to draw a 3D Haunter Pokemon with OpenGL library with animations and effects.
 
+11 February 2017 8.13 PM
+- Top of the mouth now has 4 teeth
+- Color changed a little darker for its spike
 
 11 February 2017
 - Added mouth with two teeth

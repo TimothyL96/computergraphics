@@ -111,6 +111,18 @@ namespace haunter{
                 glColor3f(1.0f, 1.0f, 1.0f);
                 //mybeziersurface.drawControlPoints();
 
+                init3();
+                glColor3f(0.5,0.0,0.75);
+                mybeziersurface.draw(GL_FILL); //or GL_LINE or GL_POINT
+                glColor3f(1.0f, 1.0f, 1.0f);
+                //mybeziersurface.drawControlPoints();
+
+                init4();
+                glColor3f(0.5,0.0,0.75);
+                mybeziersurface.draw(GL_FILL); //or GL_LINE or GL_POINT
+                glColor3f(1.0f, 1.0f, 1.0f);
+                //mybeziersurface.drawControlPoints();
+
                 //glColor3f(1.0f, 0.0f, 1.0f);
                 //mybezierline.draw(GL_LINE); //or GL_POINT
                 //glColor3f(0.0f, 1.0f, 1.0f);
@@ -211,13 +223,34 @@ namespace haunter{
                  //   8.0f, 10.0f, 10.0f,
                  //   5.0f, 0.0f, 10.0f,
 
-                    5.7f,-5.0f, 9.57f, // Lower
-                    7.0f, -3.39f, 9.35f, // Top left
+                    -2.3f,-5.13f, 10.67f, // Lower
+                    -3.5f, -3.67f, 11.13f, // Top left
                     //-5.0f, -4.0f, 10.15f,
 
 
-                    5.0f,-3.58f, 10.57f, // Top right
-                    6.2f, -3.46f, 9.98f, // top center
+                    -1.5f,-3.73f, 11.5f, // Top right
+                    -2.7f, -3.69f, 11.33f, // top center
+                    //-2.0f, -4.0f, 11.9f,
+                };
+                mybeziersurface.setup(controlpoints3, 2, 2);
+            }
+
+            void init4()
+            {
+                static GLfloat controlpoints3[] =
+                {
+                  //  -5.0f, 0.0f, 10.0f,
+                  //  -8.0f, 10.0f, 10.0f,
+                 //   8.0f, 10.0f, 10.0f,
+                 //   5.0f, 0.0f, 10.0f,
+
+                    2.3f,-5.13f, 10.67f, // Lower
+                    3.5f, -3.67f, 11.13f, // Top left
+                    //-5.0f, -4.0f, 10.15f,
+
+
+                    1.5f,-3.73f, 11.5f, // Top right
+                    2.7f, -3.69f, 11.33f, // top center
                     //-2.0f, -4.0f, 11.9f,
                 };
                 mybeziersurface.setup(controlpoints3, 2, 2);

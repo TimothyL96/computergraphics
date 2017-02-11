@@ -191,6 +191,7 @@ void HaunterFace::drawFace()
 
 	glBegin(GL_TRIANGLES);
 	//glColor3f(1.0,1.0,0.0); //this is for testing usage
+	glColor3f(0.47,0.0,0.71);
 	//Left top spike
 	glVertex3f(-5,8,7);
 	glVertex3f(-20,15,-8);
