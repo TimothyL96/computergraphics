@@ -6,6 +6,17 @@
 
 using namespace haunter;
 
+Haunter_Hand::Haunter_Hand()
+{
+    pObj = gluNewQuadric();
+    gluQuadricNormals(pObj, GLU_SMOOTH);
+}
+
+Haunter_Hand::~Haunter_Hand()
+{
+    gluDeleteQuadric(pObj);
+}
+
 void ForceField::draw()
 {
     glPointSize(1.0);
@@ -296,7 +307,7 @@ void HaunterFace::drawFace()
 
 	glBegin(GL_TRIANGLES);
 	//glColor3f(1.0,1.0,0.0); //this is for testing usage
-	glColor3f(0.47, 0.0, 0.71);
+	glColor3f(0.48, 0.0, 0.72);
 	//Left top spike
 	glVertex3f(-5, 8, 7);
 	glVertex3f(-20, 15, -8);
@@ -330,7 +341,6 @@ void HaunterFace::drawFace()
 
 	//Start of bottom spike
 	//Bottom left spike 1
-   // glColor3f(1,1,1); //color for testing
 
 	//Bottom left spike 2
     glVertex3f(-6, -9, 5);
@@ -388,5 +398,163 @@ void HaunterFace::drawMouth(GLenum draw_mode, GLint ures,GLint vres)
 
 void Haunter_Hand::draw()
 {
-    //will draw later
+    glDisable(GL_CULL_FACE);
+
+    glColor3f(0.47, 0.0, 0.72);
+
+    //Left fingernails
+    glPushMatrix();
+    glTranslatef(-19.0f, -5.0f, 8.5f);
+    glRotatef(105.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-17.0f, -5.0f, 7.0f);
+    glRotatef(115.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-21.0f, -5.0f, 6.0f);
+    glRotatef(125.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.0f, 1.0f, 26, 13);
+    glPopMatrix();
+
+    //Right fingernails
+    glPushMatrix();
+    glTranslatef(19.0f, -5.0f, 9.0f);
+    glRotatef(110.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(18.0f, -5.5f, 7.0f);
+    glRotatef(15.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(21.0f, -5.0f, 9.05f);
+    glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.0f, 1.0f, 26, 13);
+    glPopMatrix();
+
+    //Left section after fingernail
+    //Left center
+    glPushMatrix();
+    glTranslatef(-19.0f, -4.54f, 8.5f);
+    glRotatef(90.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-19.0f, -3.6f, 7.2f);
+    glRotatef(40.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-19.0f, -3.25f, 4.3f);
+    glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.8f, 0.7f, 3.2f, 26, 13);
+    glPopMatrix();
+
+    //Left right
+    glPushMatrix();
+    glTranslatef(-17.0f, -4.54f, 7.0f);
+    glRotatef(90.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-17.0f, -3.6f, 5.7f);
+    glRotatef(40.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-17.0f, -3.4f, 3.9f);
+    glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.8f, 0.7f, 2.1f, 26, 13);
+    glPopMatrix();
+
+    //Left left
+    glPushMatrix();
+    glTranslatef(-21.0f, -4.6f, 6.1f);
+    glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.4f, 0.6f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-21.0f, -3.8f, 5.4f);
+    glRotatef(50.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.7f, 0.4f, 1.4f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-21.0f, -3.75f, 4.2f);
+    glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.8f, 0.6f, 1.7f, 26, 13);
+    glPopMatrix();
+
+    //Right section after fingernail
+    //Right center
+    glPushMatrix();
+    glTranslatef(19.0f, -4.55f, 9.05f);
+    glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(19.0f, -3.5f, 7.88f);
+    glRotatef(45.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(19.0f, -2.95f, 5.1f);
+    glRotatef(15.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.8f, 0.6f, 3.3f, 26, 13);
+    glPopMatrix();
+
+    //Right left
+    glPushMatrix();
+    glTranslatef(18.0f, -5.4f, 6.5f);
+    glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(18.0f, -5.2f, 5.5f);
+    glRotatef(5.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.7f, 0.4f, 1.4f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(18.0f, -5.3f, 3.2f);
+    glRotatef(0.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.8f, 0.65f, 2.8f, 26, 13);
+    glPopMatrix();
+
+    //Right right
+    glPushMatrix();
+    glTranslatef(21.0f, -4.55f, 9.1f);
+    glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(21.0f, -3.5f, 7.93f);
+    glRotatef(45.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(21.0f, -3.5f, 5.15f);
+    glRotatef(5.0f, 9.0f, 0.0f, 0.0f);
+    gluCylinder(pObj, 0.8f, 0.6f, 3.3f, 26, 13);
+    glPopMatrix();
+
+    glEnable(GL_CULL_FACE);
 }

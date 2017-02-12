@@ -36,6 +36,12 @@ namespace haunter{
     {
         public:
             void draw();
+            Haunter_Hand();
+            ~Haunter_Hand();
+
+        private:
+            //Setup Quadric Object
+            GLUquadricObj *pObj;
     };
 
     class bezierSurface
@@ -62,7 +68,6 @@ namespace haunter{
             Moon moon;
             bezierSurface bso;
 
-        public:
             void draw()
             {
                 field.draw();
