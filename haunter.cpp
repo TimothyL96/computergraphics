@@ -293,6 +293,7 @@ void HaunterFace::drawFace()
     const float Deg2Rad = 3.14159/180 ;// convert degree into Rad
 
     glColor3f(0.5, 0.0, 0.75);
+    //glColor3f(1, 0.0, 0.0);
     GLUquadricObj *sphere;
     sphere = gluNewQuadric();
     gluQuadricDrawStyle(sphere, GLU_FILL);
@@ -404,38 +405,38 @@ void Haunter_Hand::draw()
 
     //Left fingernails
     glPushMatrix();
-    glTranslatef(-19.0f, -5.0f, 8.5f);
+    glTranslatef(-14.0f, -8.0f, 14.5f);
     glRotatef(105.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-17.0f, -5.0f, 7.0f);
+    glTranslatef(-12.0f, -8.0f, 13.0f);
     glRotatef(115.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-21.0f, -5.0f, 6.0f);
+    glTranslatef(-16.0f, -8.0f, 12.0f);
     glRotatef(125.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.0f, 1.0f, 26, 13);
     glPopMatrix();
 
     //Right fingernails
     glPushMatrix();
-    glTranslatef(19.0f, -5.0f, 9.0f);
+    glTranslatef(14.0f, -8.0f, 15.0f);
     glRotatef(110.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(18.0f, -5.5f, 7.0f);
+    glTranslatef(13.0f, -6.5f, 15.0f);
     glRotatef(15.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.0f, 1.1f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(21.0f, -5.0f, 9.05f);
+    glTranslatef(16.0f, -8.0f, 15.05f);
     glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.0f, 1.0f, 26, 13);
     glPopMatrix();
@@ -443,57 +444,57 @@ void Haunter_Hand::draw()
     //Left section after fingernail
     //Left center
     glPushMatrix();
-    glTranslatef(-19.0f, -4.54f, 8.5f);
+    glTranslatef(-14.0f, -7.54f, 14.5f);
     glRotatef(90.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-19.0f, -3.6f, 7.2f);
+    glTranslatef(-14.0f, -6.6f, 13.2f);
     glRotatef(40.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-19.0f, -3.25f, 4.3f);
+    glTranslatef(-14.0f, -6.25f, 10.3f);
     glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.8f, 0.7f, 3.2f, 26, 13);
     glPopMatrix();
 
     //Left right
     glPushMatrix();
-    glTranslatef(-17.0f, -4.54f, 7.0f);
+    glTranslatef(-12.0f, -7.54f, 13.0f);
     glRotatef(90.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-17.0f, -3.6f, 5.7f);
+    glTranslatef(-12.0f, -6.6f, 11.7f);
     glRotatef(40.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-17.0f, -3.4f, 3.9f);
+    glTranslatef(-12.0f, -6.4f, 9.9f);
     glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.8f, 0.7f, 2.1f, 26, 13);
     glPopMatrix();
 
     //Left left
     glPushMatrix();
-    glTranslatef(-21.0f, -4.6f, 6.1f);
+    glTranslatef(-16.0f, -7.6f, 12.1f);
     glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.4f, 0.6f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-21.0f, -3.8f, 5.4f);
+    glTranslatef(-16.0f, -6.8f, 11.4f);
     glRotatef(50.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.7f, 0.4f, 1.4f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(-21.0f, -3.75f, 4.2f);
+    glTranslatef(-16.0f, -6.75f, 10.2f);
     glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.8f, 0.6f, 1.7f, 26, 13);
     glPopMatrix();
@@ -501,60 +502,197 @@ void Haunter_Hand::draw()
     //Right section after fingernail
     //Right center
     glPushMatrix();
-    glTranslatef(19.0f, -4.55f, 9.05f);
+    glTranslatef(14.0f, -7.55f, 15.05f);
     glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(19.0f, -3.5f, 7.88f);
+    glTranslatef(14.0f, -6.5f, 13.88f);
     glRotatef(45.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(19.0f, -2.95f, 5.1f);
+    glTranslatef(14.0f, -5.95f, 11.1f);
     glRotatef(15.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.8f, 0.6f, 3.3f, 26, 13);
     glPopMatrix();
 
     //Right left
     glPushMatrix();
-    glTranslatef(18.0f, -5.4f, 6.5f);
+    glTranslatef(13.0f, -6.4f, 14.5f);
     glRotatef(10.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(18.0f, -5.2f, 5.5f);
+    glTranslatef(13.0f, -6.2f, 13.5f);
     glRotatef(5.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.7f, 0.4f, 1.4f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(18.0f, -5.3f, 3.2f);
+    glTranslatef(13.0f, -6.3f, 11.2f);
     glRotatef(0.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.8f, 0.65f, 2.8f, 26, 13);
     glPopMatrix();
 
     //Right right
     glPushMatrix();
-    glTranslatef(21.0f, -4.55f, 9.1f);
+    glTranslatef(16.0f, -7.55f, 15.1f);
     glRotatef(95.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.5f, 0.5f, 0.6f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(21.0f, -3.5f, 7.93f);
+    glTranslatef(16.0f, -6.5f, 13.93f);
     glRotatef(45.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.7f, 0.4f, 1.9f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(21.0f, -3.5f, 5.15f);
+    glTranslatef(16.0f, -6.5f, 11.15f);
     glRotatef(5.0f, 9.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.8f, 0.6f, 3.3f, 26, 13);
     glPopMatrix();
 
+    //Left Palm - 4 surface
+    float topboty, topbotx, topbotx1, zaxis, zaxis2;
+    float lengthdif, widthdif, heightdif,  //Length(Z), Height(y) and Width(X) difference
+
+    glDisable(GL_CULL_FACE);
+    glBegin(GL_POLYGON);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    glColor3f(0.47, 0.0, 0.72);
+
+    topbotx = -11.1;
+    topbotx1 = -16.8;
+    topboty = -5.5;
+    zaxis = 10.5;
+
+    lengthdif = 4;
+    widthdif = 1.2;
+    heightdif = 1.8;
+    zaxis2 = zaxis - lengthdif;
+
+    //top
+    glVertex3f(topbotx1 + widthdif, topboty, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty, zaxis2);
+    glVertex3f(topbotx, topboty, zaxis);
+    glVertex3f(topbotx1, topboty, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    //bottom
+    glVertex3f(topbotx1 + widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx, topboty - heightdif, zaxis);
+    glVertex3f(topbotx1, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //left
+    glVertex3f(topbotx1 + widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx1 + widthdif, topboty, zaxis2);
+    glVertex3f(topbotx1, topboty, zaxis);
+    glVertex3f(topbotx1, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //right
+    glVertex3f(topbotx - widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty, zaxis2);
+    glVertex3f(topbotx, topboty, zaxis);
+    glVertex3f(topbotx, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //front
+    glVertex3f(topbotx1, topboty, zaxis);
+    glVertex3f(topbotx, topboty, zaxis);
+    glVertex3f(topbotx, topboty - heightdif, zaxis);
+    glVertex3f(topbotx1, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //back
+    glVertex3f(topbotx - widthdif, topboty, zaxis2);
+    glVertex3f(topbotx1 + widthdif, topboty, zaxis2);
+    glVertex3f(topbotx1 + widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty - heightdif, zaxis2);
+
+    glEnd();
+
+    //Right Palm
+    glBegin(GL_POLYGON);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    glColor3f(0.47, 0.0, 0.72);
+
+    topbotx = 12.2;
+    topbotx1 = 17.0;
+    topboty = -5.5;
+    zaxis = 11.5;
+
+    lengthdif = 4;
+    widthdif = -1;
+    heightdif = 1.8;
+    zaxis2 = zaxis - lengthdif;
+
+    //top
+    glVertex3f(topbotx1 + widthdif, topboty, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty, zaxis2);
+    glVertex3f(topbotx, topboty, zaxis);
+    glVertex3f(topbotx1, topboty, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+    //bottom
+    glVertex3f(topbotx1 + widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx, topboty - heightdif, zaxis);
+    glVertex3f(topbotx1, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //left
+    glVertex3f(topbotx1 + widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx1 + widthdif, topboty, zaxis2);
+    glVertex3f(topbotx1, topboty, zaxis);
+    glVertex3f(topbotx1, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //right
+    glVertex3f(topbotx - widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty, zaxis2);
+    glVertex3f(topbotx, topboty, zaxis);
+    glVertex3f(topbotx, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //front
+    glVertex3f(topbotx1, topboty, zaxis);
+    glVertex3f(topbotx, topboty, zaxis);
+    glVertex3f(topbotx, topboty - heightdif, zaxis);
+    glVertex3f(topbotx1, topboty - heightdif, zaxis);
+
+    glEnd();
+    glBegin(GL_POLYGON);
+
+    //back
+    glVertex3f(topbotx - widthdif, topboty, zaxis2);
+    glVertex3f(topbotx1 + widthdif, topboty, zaxis2);
+    glVertex3f(topbotx1 + widthdif, topboty - heightdif, zaxis2);
+    glVertex3f(topbotx - widthdif, topboty - heightdif, zaxis2);
+
+    glEnd();
     glEnable(GL_CULL_FACE);
 }

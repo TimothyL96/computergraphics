@@ -2,6 +2,9 @@
 A computer graphic assignment drawn with OpenGL using C++.
 The task is to draw a 3D Haunter Pokemon with OpenGL library with animations and effects.
 
+12 February 2017 10.30 PM
+-Finished model
+
 12 February 2017 7.00 PM
 - Added 6 fingers
 
